@@ -29,10 +29,11 @@ coffeelint:
 ## Example Config
 
 ```coffeescript
-rules:
-  "max_line_length":
-    "value": 100
-    "level": "error"
+coffeelint:
+  rules:
+    "max_line_length":
+      value: 100
+      level: "error"
 ```
 
 This will change the line length to 100.
