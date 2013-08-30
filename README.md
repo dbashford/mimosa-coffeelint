@@ -16,7 +16,7 @@ When mimosa-coffeelint encounters a coffeescript file, it lints it! This occurs 
 
 ## Default Config
 
-```
+```coffeescript
 coffeelint:
   exclude:[]
   rules:{}
@@ -24,3 +24,15 @@ coffeelint:
 
 * `exclude`: array of strings or regexes that match files to not coffeelint, strings are paths that can be relative to the `watch.compiledDir` or absolute.
 * `rules`: Rule overrides for the coffeelint module. Rule definitions can be be found at http://www.coffeelint.org/#options.
+
+
+## Example Config
+
+```coffeescript
+rules:
+  "max_line_length":
+    "value": 100
+    "level": "error"
+```
+
+This will change the line length to 100.
