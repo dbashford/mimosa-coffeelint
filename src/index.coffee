@@ -6,13 +6,12 @@ logger = require 'logmimosa'
 config = require './config'
 
 registration = (mimosaConfig, register) ->
-  # at this time ["coffee", "litcoffee"] are the mimosa default coffee extensions
   coffeeExts = mimosaConfig.coffeescript?.extensions ? ["coffee", "litcoffee"]
   register ['add','update','buildFile'], 'betweenReadCompile', _coffeelint, coffeeExts
 
 _coffeelint = (mimosaConfig, options, next) ->
   if options.files?
-    options.files.forEach (file) =>
+    options.files.forEach (file) ->
       return if mimosaConfig.coffeelint.exclude?      and mimosaConfig.coffeelint.exclude.indexOf(file.inputFileName) isnt -1
       return if mimosaConfig.coffeelint.excludeRegex? and file.inputFileName.match(mimosaConfig.coffeelint.excludeRegex)
       lintErrors = coffeelint.lint file.inputFileText, mimosaConfig.coffeelint.rules
