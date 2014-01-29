@@ -7,7 +7,7 @@ config = require './config'
 
 registration = (mimosaConfig, register) ->
   # at this time ["coffee", "litcoffee"] are the mimosa default coffee extensions
-  coffeeExts = mimosaConfig.compilers.extensionOverrides?.coffee ? ["coffee", "litcoffee"]
+  coffeeExts = mimosaConfig.coffeescript?.extensions ? ["coffee", "litcoffee"]
   register ['add','update','buildFile'], 'betweenReadCompile', _coffeelint, coffeeExts
 
 _coffeelint = (mimosaConfig, options, next) ->
