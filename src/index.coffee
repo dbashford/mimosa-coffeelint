@@ -1,11 +1,14 @@
 "use strict"
 
 coffeelint = require 'coffeelint'
-logger = require 'logmimosa'
 
 config = require './config'
 
+logger = null
+
 registration = (mimosaConfig, register) ->
+  logger = mimosaConfig.log
+
   coffeeExts = mimosaConfig.coffeescript?.extensions ? ["coffee", "litcoffee"]
   register ['add','update','buildFile'], 'betweenReadCompile', _coffeelint, coffeeExts
 

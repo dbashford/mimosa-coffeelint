@@ -1,6 +1,6 @@
 {
   "name": "mimosa-coffeelint",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "homepage": "https://github.com/dbashford/mimosa-coffeelint",
   "author": "David Bashford",
   "description": "A CoffeeLinting module for Mimosa",
@@ -23,8 +23,7 @@
     "coffeescipt"
   ],
   "dependencies": {
-    "logmimosa": "0.6.0",
-    "coffeelint" :"1.0.6"
+    "coffeelint" :"1.0.7"
   },
   "license": "MIT",
   "engines": {
