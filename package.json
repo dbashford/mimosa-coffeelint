@@ -1,6 +1,6 @@
 {
   "name": "mimosa-coffeelint",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "homepage": "https://github.com/dbashford/mimosa-coffeelint",
   "author": "David Bashford",
   "description": "A CoffeeLinting module for Mimosa",
