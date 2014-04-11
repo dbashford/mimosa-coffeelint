@@ -10,6 +10,8 @@ registration = (mimosaConfig, register) ->
   logger = mimosaConfig.log
 
   coffeeExts = mimosaConfig.coffeescript?.extensions ? ["coffee", "litcoffee"]
+  icedExts = mimosaConfig.iced?.extensions ? ["iced"]
+  coffeeExts.push.apply coffeeExts, icedExts
   register ['add','update','buildFile'], 'betweenReadCompile', _coffeelint, coffeeExts
 
 _coffeelint = (mimosaConfig, options, next) ->
