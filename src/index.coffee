@@ -26,10 +26,13 @@ _coffeelint = (mimosaConfig, options, next) ->
   next()
 
 _log = (fileName, err) ->
-  message = "CoffeeLint Error: #{err.message}, in file [[ #{fileName} ]]"
+  message = "CoffeeLint: #{err.message}, in file [[ #{fileName} ]]"
   message += ", at line number [[ #{err.lineNumber} ]]" if err.lineNumber
   message += ", context [[ #{err.lineNumber} ]]" if err.context
-  logger.warn message
+  if err.level is 'error'
+    logger.error message
+  else
+    logger.warn message
 
 module.exports =
   registration:    registration
